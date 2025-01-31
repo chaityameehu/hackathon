@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Matches - EmpowerU</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+
+  <div class="flex">
+    <!-- Sidebar Navigation -->
+    <div class="w-64 bg-gray-800 h-screen p-5 fixed top-0 left-0">
+      <div class="text-3xl font-semibold mb-10">EmpowerU</div>
+      <nav class="flex flex-col space-y-4">
+        <a href="dashboard.html" 
+           class="flex items-center space-x-4 text-gray-300 hover:bg-gray-700 hover:text-yellow-400 px-3 py-2 rounded-lg">
+          <i class="fas fa-home text-yellow-400"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="course.html" 
+           class="flex items-center space-x-4 text-gray-300 hover:bg-gray-700 hover:text-yellow-400 px-3 py-2 rounded-lg">
+          <i class="fas fa-graduation-cap text-yellow-400"></i>
+          <span>Courses</span>
+        </a>
+        <a href="jobmatches.html" 
+           class="flex items-center space-x-4 text-gray-300 hover:bg-gray-700 hover:text-yellow-400 px-3 py-2 rounded-lg">
+          <i class="fas fa-briefcase text-yellow-400"></i>
+          <span>Job Matches</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 ml-64 p-8">
+      <!-- Job Matches Section -->
+      <section id="job-matches" class="mb-8">
+        <h2 class="text-3xl font-bold mb-6">Available Job Matches</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Job Card 1 -->
+          <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Software Developer</h3>
+            <p class="text-gray-400">Location: Remote</p>
+            <p class="text-gray-300 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+            <button class="mt-4 bg-yellow-400 text-black p-2 rounded">Apply Now</button>
+          </div>
+
+          <!-- Job Card 2 -->
+          <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">UI/UX Designer</h3>
+            <p class="text-gray-400">Location: New York</p>
+            <p class="text-gray-300 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+            <button class="mt-4 bg-yellow-400 text-black p-2 rounded">Apply Now</button>
+          </div>
+
+          <!-- Job Card 3 -->
+          <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Digital Marketing Specialist</h3>
+            <p class="text-gray-400">Location: Remote</p>
+            <p class="text-gray-300 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+            <button class="mt-4 bg-yellow-400 text-black p-2 rounded">Apply Now</button>
+          </div>
+
+          <!-- More Job Cards -->
+          <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Data Scientist</h3>
+            <p class="text-gray-400">Location: San Francisco</p>
+            <p class="text-gray-300 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+            <button class="mt-4 bg-yellow-400 text-black p-2 rounded">Apply Now</button>
+          </div>
+
+          <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Product Manager</h3>
+            <p class="text-gray-400">Location: Los Angeles</p>
+            <p class="text-gray-300 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+            <button class="mt-4 bg-yellow-400 text-black p-2 rounded">Apply Now</button>
+          </div>
+
+          <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold">Sales Representative</h3>
+            <p class="text-gray-400">Location: Remote</p>
+            <p class="text-gray-300 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+            <button class="mt-4 bg-yellow-400 text-black p-2 rounded">Apply Now</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</body>
+</html>

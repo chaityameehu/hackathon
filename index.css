@@ -1,0 +1,419 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+#background-image {
+  background-image: url('empowering-rural-women-entrepreneurs.jpg'); /* Your rural image path */
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+header .nav {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+header .navigation {
+  font-size: 2rem;
+  color: white;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  margin-top: 10px;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+header nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  background-color: #111827;
+}
+
+.cta-btn:hover {
+  background-color: #2d3748;
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 30px;
+  width: 400px;
+  height: 410px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.form-container {
+  text-align: center;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #111827;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form button:hover {
+  background-color: #2d3748;
+}
+
+.form p {
+  font-size: 1rem;
+  padding-top: 100px;
+}
+
+.form a {
+  color: #2d3748;
+  text-decoration: none;
+}
+
+.form a:hover {
+  text-decoration: underline;
+}
+
+#features {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+#features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 270px;
+  height: 285px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  padding-top: 20px;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #555;
+  padding-top: 25px;
+}
+
+#how-it-works {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+#how-it-works h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.step-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.step-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.step-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+#testimonials {
+  background-color: white; /* Dark background for testimonials */
+  color: black; /* White text for visibility */
+  padding: 40px 0;
+  text-align: center;
+}
+
+.testimonial-box {
+  display: flex;
+  justify-content: center; /* Center cards horizontally */
+  gap: 20px; /* Space between cards */
+  flex-wrap: wrap; /* Allow cards to wrap if screen is small */
+  align-items: center;
+}
+
+.testimonial-card {
+  background-color: whitesmoke; /* Card background color */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  opacity: 0.9; /* Slight opacity for initial effect */
+  transform: translateY(0); /* Start at normal position */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.testimonial-card p {
+  margin: 10px 0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px); /* Move up when hovered */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow for hover effect */
+}
+
+.testimonial-box .testimonial-card:nth-child(1) {
+  animation: fadeIn 1.2s forwards;
+}
+
+.testimonial-box .testimonial-card:nth-child(2) {
+  animation: fadeIn 1.4s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    width: 80%;
+  }
+}
+
+#cta {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* Footer */
+footer {
+  background-color: #111827; /* Dark blue footer background */
+  color: #F2F2F2; /* Light gray text color */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links li {
+  font-size: 16px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white; /* Light gray color */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #2d3748; /* Bright orange on hover */
+}
+
+.social-media {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .content p {
+    font-size: 1.2rem;
+  }
+
+  .cta-btn {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}

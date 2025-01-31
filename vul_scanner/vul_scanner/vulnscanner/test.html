@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VulnScanner - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        .scan-result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center">VulnScanner Dashboard</h1>
+
+    <!-- Start New Scan Form -->
+    <div class="card">
+        <div class="card-header">
+            <h4>Start New Scan</h4>
+        </div>
+        <div class="card-body">
+            <form action="/start_scan" method="POST">
+                <div class="form-group">
+                    <label for="target">Target Domain</label>
+                    <input type="text" class="form-control" id="target" name="target" required>
+                </div>
+                <div class="form-group">
+                    <label for="scan_type">Scan Type</label>
+                    <select class="form-control" id="scan_type" name="scan_type" required>
+                        <option value="Full Scan">Full Scan</option>
+                        <option value="Quick Scan">Quick Scan</option>
+                        <option value="Custom Scan">Custom Scan</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Start Scan</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Previous Scans -->
+    <div class="card scan-result">
+        <div class="card-header">
+            <h4>Previous Scans</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Scan Type</th>
+                        <th>Date</th>
+                        <th>Summary</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for scan in previous_scans %}
+                    <tr>
+                        <td>{{ scan.domain }}</td>
+                        <td>{{ scan.scan_type }}</td>
+                        <td>{{ scan.date }}</td>
+                        <td>High: {{ scan.summary.high }}, Medium: {{ scan.summary.medium }}, Low: {{ scan.summary.low }}</td>
+                        <td>
+                            <a href="{{ url_for('scan_report', report_id=scan.report_id) }}" class="btn btn-info">View Report</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

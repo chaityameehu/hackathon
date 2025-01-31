@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarships - EmpowerU</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-900 text-white">
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-800 h-screen p-6 min-h-screen">
+      <h1 class="text-2xl font-bold mb-10">EmpowerU</h1>
+      <nav>
+        <ul class="flex flex-col space-y-6">
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-home text-yellow-400"></i>
+            <a href="dashboard.html" class="hover:text-yellow-400">Dashboard</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-briefcase text-yellow-400"></i>
+            <a href="jobmatches.html" class="hover:text-yellow-400">Job Matches</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-graduation-cap text-yellow-400"></i>
+            <a href="scholarship.html" class="hover:text-yellow-400">Scholarships</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-book text-yellow-400"></i>
+            <a href="course.html" class="hover:text-yellow-400">Courses</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <i class="fas fa-dollar-sign text-yellow-400"></i>
+            <a href="#pricing" class="hover:text-yellow-400">Pricing</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+      <!-- Header -->
+      <header class="mb-6">
+        <h2 class="text-3xl font-bold">Scholarships</h2>
+        <p class="text-lg mt-2">Explore opportunities to fund your education and career growth.</p>
+      </header>
+
+      <!-- Filters -->
+      <section class="mb-8">
+        <h3 class="text-2xl font-semibold mb-4">Filter Scholarships</h3>
+        <div class="flex items-center space-x-4">
+          <input type="text" class="bg-gray-800 text-white p-2 rounded w-full" placeholder="Search scholarships..." />
+          <select class="bg-gray-800 text-white p-2 rounded">
+            <option value="all">All Categories</option>
+            <option value="govt-exam">Government Exams</option>
+            <option value="higher-education">Higher Education</option>
+            <option value="skill-development">Skill Development</option>
+          </select>
+          <button class="bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-500">Apply Filters</button>
+        </div>
+      </section>
+
+      <!-- Scholarships Grid -->
+      <section>
+        <h3 class="text-2xl font-semibold mb-4">Available Scholarships</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold">Government Exam Sponsorship</h4>
+            <p class="mt-2">Deadline: January 31, 2025</p>
+            <p class="mt-2">Covers exam fees and preparation materials.</p>
+            <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-500">Apply Now</button>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold">Higher Education Scholarship</h4>
+            <p class="mt-2">Deadline: February 15, 2025</p>
+            <p class="mt-2">Supports tuition for top-ranked universities.</p>
+            <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-500">Apply Now</button>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold">Skill Development Grant</h4>
+            <p class="mt-2">Deadline: March 10, 2025</p>
+            <p class="mt-2">Funds certifications for digital and technical skills.</p>
+            <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-500">Apply Now</button>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold">Rural Talent Sponsorship</h4>
+            <p class="mt-2">Deadline: April 5, 2025</p>
+            <p class="mt-2">Encourages rural students to pursue higher studies.</p>
+            <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-500">Apply Now</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>© 2025 EmpowerU. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

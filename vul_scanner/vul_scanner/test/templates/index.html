@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VulnScanner Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100">
+    <!-- Header -->
+    <header class="bg-gray-800 py-4 shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-500/10 p-2 rounded-lg">
+                    <i class="fas fa-shield-alt text-blue-500 text-2xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-300">
+                    VulnScanner Pro
+                </h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button onclick="logout()" class="text-gray-400 hover:text-blue-500 transition">
+                    <i class="fas fa-sign-out-alt text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- New Scan Section -->
+        <div class="bg-gray-800 rounded-lg shadow p-6 mb-8">
+            <h2 class="text-lg font-semibold mb-4 flex items-center">
+                <i class="fas fa-search text-blue-400 mr-2"></i> New Security Scan
+            </h2>
+            <div class="flex flex-wrap gap-6 items-center">
+                <!-- URL Input with Icon -->
+                <div class="relative flex-1">
+                    <i class="fas fa-globe absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
+                    <input type="text" id="urlInput" placeholder="Enter target URL to scan"
+                           class="w-full bg-gray-700 border border-gray-600 rounded-lg px-12 py-2 focus:outline-none focus:border-blue-500">
+                </div>
+
+                <!-- Scan Type Dropdown -->
+                <select id="scanType"
+                        class="bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500">
+                    <option value="quick">Quick Scan</option>
+                    <option value="full">Full Audit</option>
+                    <option value="custom">Custom Scan</option>
+                </select>
+
+                <!-- Start Scan Button -->
+                <button onclick="startScan()" class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-500 transition">
+                    Start Scan
+                </button>
+            </div>
+        </div>
+
+        <!-- Scan History Section -->
+        <div class="bg-gray-800 rounded-lg shadow p-6">
+            <h2 class="text-lg font-semibold mb-4 flex items-center">
+                <i class="fas fa-history text-blue-400 mr-2"></i> Scan History
+            </h2>
+            <div id="previousScans" class="space-y-4"></div>
+        </div>
+    </main>
+
+    <script>
+        const previousScans = [
+            { id: 1, url: 'https://example.com', type: 'Full Audit', vulnerabilities: 3, date: '2025-01-10', status: 'Complete' },
+            { id: 2, url: 'https://test.org', type: 'Quick Scan', vulnerabilities: 1, date: '2025-01-09', status: 'Complete' },
+        ];
+
+        function renderPreviousScans() {
+            const container = document.getElementById('previousScans');
+            container.innerHTML = previousScans.map(scan => `
+                <div class="bg-gray-700 rounded-lg p-4 flex justify-between items-center">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-gray-600 p-3 rounded-lg">
+                            <i class="fas fa-chart-bar text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium">${scan.url}</h3>
+                            <p class="text-xs text-gray-400">${scan.type} • ${scan.date}</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-medium text-red-400">${scan.vulnerabilities} Vulnerabilities</p>
+                        <p class="text-xs text-gray-400">${scan.status}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function startScan() {
+            const url = document.getElementById('urlInput').value;
+            if (!url) {
+                alert('Please enter a URL to scan.');
+                return;
+            }
+
+            previousScans.unshift({
+                id: previousScans.length + 1,
+                url: url,
+                type: document.getElementById('scanType').value,
+                vulnerabilities: 0,
+                date: new Date().toISOString().split('T')[0],
+                status: 'In Progress',
+            });
+
+            document.getElementById('urlInput').value = '';
+            renderPreviousScans();
+        }
+
+        function logout() {
+            alert('Logging out...');
+        }
+
+        renderPreviousScans();
+    </script>
+</body>
+</html>

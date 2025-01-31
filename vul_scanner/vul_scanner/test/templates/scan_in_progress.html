@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan in Progress</title>
+    <style>
+        .progress-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            height: 30px;
+            margin: 20px 0;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background-color: green;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scan in Progress for {{ target }}</h1>
+    <div class="progress-bar">
+        <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%;">0%</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        const socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('scan_progress', function(data) {
+            const progress = data.status;
+            document.getElementById('progress-bar-fill').style.width = progress + '%';
+            document.getElementById('progress-bar-fill').textContent = progress + '%';
+        });
+
+        socket.on('scan_complete', function(data) {
+            window.location.href = '/report/' + data.result_id;
+        });
+
+        socket.on('scan_error', function(data) {
+            alert('Error: ' + data.message);
+        });
+    </script>
+</body>
+</html>

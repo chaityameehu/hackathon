@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="dashboard.js"></script>
+
+    <!-- Link to FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="news.css">
+</head>
+
+<body class="bg-gray-900 text-white">
+
+    <div class="flex">
+
+        <!-- Sidebar Navigation (Stretched to Bottom) -->
+        <div class="w-64 bg-gray-800 h-screen p-6 min-h-screen fixed top-0 left-0">
+            <div class="text-2xl font-bold mb-10">EmpowerU</div>
+            <nav>
+                <ul class="flex flex-col space-y-6">
+                    <li class="flex items-center space-x-2">
+                        <i class="fas fa-home text-yellow-400"></i>
+                        <a href="dashboard.html" class="hover:text-yellow-400">Dashboard</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fas fa-graduation-cap text-yellow-400"></i>
+                        <a href="scholarship.html" class="hover:text-yellow-400">Scholarships</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fas fa-briefcase text-yellow-400"></i>
+                        <a href="jobmatches.html" class="hover:text-yellow-400">Job Matches</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fas fa-book text-yellow-400"></i>
+                        <a href="course.html" class="hover:text-yellow-400">Courses</a>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fas fa-dollar-sign text-yellow-400"></i>
+                        <a href="#pricing" class="hover:text-yellow-400">Pricing</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <div class="flex-1 p-6 ml-64">
+            <!-- Welcome Section -->
+            <section id="welcome" class="mb-8 flex justify-center">
+                <div class="bg-gray-800 p-9 rounded-lg shadow-md max-w-lg text-center">
+                    <h1 class="text-3xl font-semibold mb-4">Welcome, Priya!</h1>
+                    <p class="text-lg">Your journey to empowerment starts here.</p>
+                </div>
+            </section>
+            <!-- News Section -->
+            <section id="news-section" class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Latest News</h2>
+                <div class="flex items-center space-x-2 mb-4">
+                    <label for="news-query" class="text-lg">Search News:</label>
+                    <input type="text" id="news-query" class="bg-gray-800 text-white p-2 rounded"
+                        placeholder="e.g., rural development, education" />
+                    <button id="fetch-news" class="bg-yellow-400 text-black py-2 px-4 rounded hover:bg-yellow-500">
+                        Fetch News
+                    </button>
+                </div>
+                <div id="news-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+                <script src="news.js"></script>
+            </section>
+            <!-- Track Your Progress -->
+            <section id="progress" class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Track Your Progress</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold">Course Completion</h3>
+                        <div class="h-2 bg-gray-600 rounded-full mb-2">
+                            <div id="course-progress" class="h-full bg-yellow-400 rounded-full" style="width: 0%;">
+                            </div>
+                        </div>
+                        <p id="course-progress-text">0% Completed</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold">Skill Points</h3>
+                        <p><span class="text-yellow-400 text-2xl" id="skill-points">0</span> Points Earned</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold">Badges Earned</h3>
+                        <p id="badges-earned"><span class="text-yellow-400 text-2xl">0</span> Badges</p>
+                    </div>
+                </div>
+                <button id="update-progress-btn" class="bg-yellow-400 text-black p-2 rounded mt-4">Update
+                    Progress</button>
+                <button id="update-points-btn" class="bg-yellow-400 text-black p-2 rounded mt-4">Update Points</button>
+                <button id="update-badges-btn" class="bg-yellow-400 text-black p-2 rounded mt-4">Earn a Badge</button>
+            </section>
+
+            <!-- Scholarships Section -->
+            <section id="scholarships" class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Scholarships</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold">Government Exam Sponsorship</h3>
+                        <p class="mt-2">Application Deadline: Jan 31, 2025</p>
+                        <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded">Apply Now</button>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold">Higher Education Scholarship</h3>
+                        <p class="mt-2">Application Deadline: Feb 15, 2025</p>
+                        <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded">Apply Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Job Matches Section -->
+            <section id="jobs" class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Job Matches</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold">Junior Software Developer</h3>
+                        <p>Company: Tech Solutions</p>
+                        <p>Location: Remote</p>
+                        <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded">View Details</button>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold">Marketing Associate</h3>
+                        <p>Company: AgriGrow</p>
+                        <p>Location: Mumbai</p>
+                        <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded">View Details</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section id="courses" class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Your Courses</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold">Beginner Programming</h3>
+                        <p>Progress: 60%</p>
+                        <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded">Continue</button>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold">Digital Marketing</h3>
+                        <p>Progress: 30%</p>
+                        <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded">Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" class="mb-8">
+                <h2 class="text-2xl font-bold mb-4">Pricing</h2>
+                <div class="flex space-x-4 mb-6">
+                    <button id="monthly-btn" class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-yellow-400"
+                        onclick="togglePricing('monthly')">Monthly</button>
+                    <button id="annual-btn" class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-yellow-400"
+                        onclick="togglePricing('annual')">Annual</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Monthly Pricing -->
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md monthly-plan">
+                        <h3 class="text-xl font-semibold">Free Plan</h3>
+                        <p>₹0/month</p>
+                        <ul class="mt-4">
+                            <li>Access to national courses</li>
+                            <li>Basic job matches</li>
+                            <li>Limited scholarships</li>
+                        </ul>
+                        <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded">Select</button>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md monthly-plan">
+                        <h3 class="text-xl font-semibold">Premium Plan</h3>
+                        <p>₹499/month</p>
+                        <ul class="mt-4">
+                            <li>Access to international courses</li>
+                            <li>Personalized job matches</li>
+                            <li>Exclusive scholarships</li>
+                            <li>Advanced tracking tools</li>
+                        </ul>
+                        <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded">Select</button>
+                    </div>
+
+                    <!-- Annual Pricing (hidden by default) -->
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md annual-plan hidden">
+                        <h3 class="text-xl font-semibold">Free Plan</h3>
+                        <p>₹0/year</p>
+                        <ul class="mt-4">
+                            <li>Access to national courses</li>
+                            <li>Basic job matches</li>
+                            <li>Limited scholarships</li>
+                        </ul>
+                        <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded">Select</button>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md annual-plan hidden">
+                        <h3 class="text-xl font-semibold">Premium Plan</h3>
+                        <p>₹4990/year</p>
+                        <ul class="mt-4">
+                            <li>Access to international courses</li>
+                            <li>Personalized job matches</li>
+                            <li>Exclusive scholarships</li>
+                            <li>Advanced tracking tools</li>
+                        </ul>
+                        <button class="mt-4 bg-yellow-400 text-black py-2 px-4 rounded">Select</button>
+                    </div>
+                </div>
+            </section>
+            <button class="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-500" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-center py-4 mt-8">
+        <p>© 2025 EmpowerU Platform. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  #news {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 5px;
+    max-width: 800px;
+  }
+  
+  .article {
+    margin-bottom: 20px;
+  }
+  
+  .article h3 {
+    margin: 0 0 5px;
+  }
+  
+  .article p {
+    margin: 0;
+  }
+  
+  .article a {
+    color: blue;
+    text-decoration: underline;
+  }
+  
