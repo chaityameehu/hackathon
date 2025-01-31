@@ -10,7 +10,7 @@ body, html {
 }
 
 #background-image {
-  background-image: url('empowering-rural-women-entrepreneurs.jpg'); /* Your rural image path */
+  background-image: url('../others/empowering-rural-women-entrepreneurs.jpg'); /* Your rural image path */
   background-size: cover;
   background-position: center;
   height: 100%;
